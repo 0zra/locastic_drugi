@@ -52,3 +52,16 @@ exports.autoprefix = () => ({
     plugins: () => [require("autoprefixer")()]
   }
 });
+
+exports.loadJavaScript = ({ include, exclude } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+        use: "babel-loader"
+      }
+    ]
+  }
+});
