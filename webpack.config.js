@@ -26,6 +26,7 @@ const productionConfig = merge([
 ]);
 
 const developmentConfig = merge([
+  parts.generateSourceMaps({ type: "cheap-module-eval-source-map" }),
   parts.devServer({
     // Customize host/port here if needed
     host: process.env.HOST,
