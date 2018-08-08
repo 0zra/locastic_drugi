@@ -1,4 +1,7 @@
 body {
   background: cornsilk;
 }
+.pure-button {
+  border-radius: 1em;
+}
 
