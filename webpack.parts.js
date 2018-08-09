@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 exports.extractCSS = ({ include, exclude, use = [] }) => {
   // Output extracted CSS to a file
@@ -28,7 +29,8 @@ exports.devServer = ({ host, port } = {}) => ({
     host, // Defaults to `localhost`
     port, // Defaults to 8080
     open: true,
-    overlay: true
+    overlay: true,
+    contentBase: path.join(__dirname, "dist")
   }
 });
 

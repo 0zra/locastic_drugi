@@ -1,0 +1,71 @@
+@import "normalize";
+@import "images";
+body {
+  font-family: Roboto;
+}
+.full {
+  width: 100%;
+}
+/* header */
+.header--structure {
+  height: 75px;
+  position: fixed;
+  top: 0px;
+}
+.header--skin {
+  background-color: #289fd0;
+  color: #ffffff;
+}
+.header__logo {
+  display: inline-block;
+  height: 30px;
+  width: 141px;
+  margin: 23px auto 22px 38px;
+  background: $logo;
+}
+.header__navigation--structure {
+  height: 75px;
+  line-height: 75px;
+  float: right;
+}
+.header__navigation--skin {
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 0px;
+}
+/* slider */
+.slider--structure {
+  margin-top: 75px;
+  height: 250px;
+}
+.slider--skin {
+  background-image: $slider;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 640px) {
+  .slider--structure {
+    height: 400px;
+  }
+}
+/* main */
+.center {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.content-container {
+  background-color: red; /*development*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.article {
+  /*ovo treba rastavit posli*/
+  max-width: 360px;
+  margin: 2% auto;
+  height: 800px;
+  display: inline-block;
+  background-color: yellow;
+  flex: 0 1 322px;
+}
