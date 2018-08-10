@@ -42,3 +42,10 @@ for (let i = 0; i < 6; i++) {
   article_container.appendChild(createArticle());
   container.appendChild(article_container);
 }
+
+/*nav bar icon transformation*/
+const icon = document.getElementsByClassName("icon")[0];
+
+icon.onclick = function() {
+  icon.classList.toggle("change");
+};

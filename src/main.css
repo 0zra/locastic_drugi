@@ -378,6 +378,47 @@ body {
   background: #008ab3;
 }
 
+/*** NAVBAR ICON - see:  https://www.w3schools.com/howto/howto_css_menu_icon.asp ***/
+.navbar {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.icon {
+  margin-top: 15px;
+  margin-right: 15px;
+  display: none;
+  cursor: pointer;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media screen and (max-width: 768px) {
+  .header__navigation--skin {
+    display: none;
+  }
+
+  .icon {
+    display: inline-block;
+  }
+}
 /* slider */
 .slider--structure {
   margin-top: 75px;
