@@ -4,6 +4,9 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+.fixed {
+  position: fixed;
+} /*trebat ce mi kod tablet i mobile sidebar-a*/
 .full {
   width: 100%;
 }
@@ -93,7 +96,23 @@ body {
     display: inline-block;
   }
 }
-
+/*sidebar navbar*/
+.tablet-sidebar {
+  display: block;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  height: 1000px;
+  width: 50%;
+  background-color: #363636;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+.sidebar-fix {
+  width: 100%;
+  margin-bottom: 250px;
+}
 /* slider */
 .slider--structure {
   margin-top: 75px;

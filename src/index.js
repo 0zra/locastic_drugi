@@ -2,6 +2,7 @@ import component from "./component";
 import "./main.css";
 
 const container = document.getElementsByClassName("content-container")[0];
+
 const createArticle = () => {
   /*create article*/
   let article = document.createElement("div");
@@ -36,6 +37,7 @@ const createArticle = () => {
 
   return article;
 };
+/*napuni stranicu clancima*/
 for (let i = 0; i < 6; i++) {
   let article_container = document.createElement("div");
   article_container.classList.add("article-container");
@@ -48,6 +50,8 @@ const icon = document.getElementsByClassName("icon")[0];
 
 icon.onclick = function() {
   icon.classList.toggle("change");
+  const navigacija = document.getElementById("navigation");
+  navigacija.classList.toggle("tablet-sidebar");
 };
 /* dropdown functionality*/
 
