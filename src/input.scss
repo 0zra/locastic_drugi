@@ -1,7 +1,7 @@
 @import "normalize";
 @import "images";
 body {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
 }
 .full {
   width: 100%;
@@ -55,30 +55,71 @@ body {
 }
 
 .content-container {
-  background-color: red; /*development*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.article {
+.article-container {
   /*ovo treba rastavit posli*/
   max-width: 360px;
   margin: 2% auto;
-  height: 800px;
+  max-height: 800px;
   display: inline-block;
-  background-color: yellow;
   flex: 0 1 322px;
 }
 @media screen and (max-width: 768px) {
-  .article {
-    flex-basis: 363px;
-    height: 720px;
+  .article-container {
+    max-width: 330px;
+    flex-basis: 310px;
+    margin: 3% auto;
   }
 }
 @media screen and (max-width: 640px) {
-  .article {
+  .article-container {
+    max-width: none;
     flex-basis: 356px;
-    height: 660px;
+  }
+}
+@media screen and (max-width: 330px) {
+  /* ultra-slim */
+  .article-container {
+    margin: 100px auto;
+  }
+}
+.article__image {
+  min-height: 230px;
+  background-size: cover;
+  background-image: $article;
+}
+.article__heading {
+  min-height: 200px;
+  font-weight: bold;
+  font-size: 36px;
+  color: #4a4a4a;
+  line-height: 44px;
+}
+.article__summary {
+  min-height: 200px;
+  font-size: 22px;
+  color: #747474;
+  line-height: 34px;
+}
+.article__link {
+  min-height: 70px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #00a1d1;
+  letter-spacing: 0px;
+  line-height: 34px;
+  a:link {
+    text-decoration: none;
+    color: #00a1d1;
+  }
+  a:visited {
+    color: #00a1d1;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }
 .button-container {
@@ -100,6 +141,10 @@ body {
   line-height: 60px;
   text-align: center;
   font-weight: 600;
+}
+.button--skin:hover {
+  background-color: #4b4b4b;
+  cursor: pointer;
 }
 @media screen and (max-width: 640px) {
   .button-container {
@@ -125,9 +170,11 @@ body {
   color: #4a4a4a;
   letter-spacing: 0px;
   line-height: 36px;
-  text-align: left;
+  text-align: center;
+  padding: 0 5%;
 }
 .forma {
+  text-align: left;
   margin: auto;
   width: 500px;
 }
@@ -143,16 +190,33 @@ body {
   padding-left: 27px;
   border: 0;
 }
+.forma__input:hover {
+  cursor: pointer;
+  border: 1px solid #289fd0;
+}
 .forma__message {
   height: 200px;
 }
 .forma__button {
-  padding-left: 0;
+  border: 0;
+  border-radius: 4px;
   width: 518px;
+  height: 80px;
   text-align: center;
   background-color: #289fd0;
   color: white;
   font-weight: 600;
+  padding: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .forma__input,
+  .forma__message,
+  .forma__button {
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 /* footer*/
 
