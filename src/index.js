@@ -49,3 +49,24 @@ const icon = document.getElementsByClassName("icon")[0];
 icon.onclick = function() {
   icon.classList.toggle("change");
 };
+/* dropdown functionality*/
+
+const works = document.getElementById("dropdown");
+works.onclick = () => {
+  let lista = document.getElementsByClassName(
+    "header__navigation__dropdown-content"
+  )[0];
+  lista.classList.toggle("show");
+};
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".header__navigation__dropbtn")) {
+    let lista = document.getElementsByClassName(
+      "header__navigation__dropdown-content"
+    )[0];
+
+    if (lista.classList.contains("show")) {
+      lista.classList.remove("show");
+    }
+  }
+};
