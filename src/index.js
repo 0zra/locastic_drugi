@@ -71,7 +71,7 @@ works.onclick = () => {
   let lista = document.getElementsByClassName(
     "header__navigation__dropdown-content"
   )[0];
-  if (lista.classList.contains("sidebar-fix")) {
+  if (!lista.classList.contains("sidebar-fix")) {
     lista.classList.toggle("show");
   }
   // Close the dropdown menu if the user clicks outside of it
@@ -90,3 +90,19 @@ works.onclick = () => {
 
 /*
 */
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {
+    slideIndex = 1;
+  }
+  x[slideIndex - 1].style.display = "block";
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
