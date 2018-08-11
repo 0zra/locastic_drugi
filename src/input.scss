@@ -16,7 +16,7 @@ body {
 .unclickable {
   pointer-events: none;
 }
-/* header */
+/*** header ***/
 .header--structure {
   height: 75px;
   position: fixed;
@@ -44,8 +44,7 @@ body {
   color: #ffffff;
   letter-spacing: 0px;
   text-decoration: none;
-  cursor: pointer; /*zbog works-a*/
-  /*ovome nije misto tu*/
+  cursor: pointer;
   box-sizing: border-box;
   padding: 0 30px;
   height: 75px;
@@ -65,7 +64,6 @@ body {
   text-align: center;
 }
 .header__navigation__dropdown-content {
-  /*ovo posli sve refactoraj*/
   display: none;
   position: absolute;
   right: 293px;
@@ -80,10 +78,7 @@ body {
   box-sizing: border-box;
   color: white;
   text-decoration: none;
-  font-family: "Roboto";
   font-size: 18px;
-  color: #ffffff;
-  letter-spacing: 0px;
   line-height: 36px;
   width: 225px;
   padding-right: 20px;
@@ -91,7 +86,15 @@ body {
 .header__navigation__dropdown-content a:hover {
   background-color: #2288b2;
 }
+
+/* header adjustmen for tablet/mobile mode*/
 @media screen and (max-width: 768px) {
+  .header__navigation--structure {
+    display: none;
+  }
+  .icon {
+    display: inline-block;
+  }
   .header__navigation__dropdown-content {
     position: static;
     width: 100%;
@@ -107,15 +110,8 @@ body {
     color: #2796c3;
   }
 }
-@media screen and (max-width: 768px) {
-  .header__navigation--structure {
-    display: none;
-  }
-  .icon {
-    display: inline-block;
-  }
-}
-/*sidebar navbar*/
+
+/*sidebar navbar - za menu icon vidi _navbar.scss*/
 .tablet-sidebar {
   display: block;
   position: absolute;
@@ -137,18 +133,22 @@ body {
   width: 100%;
   margin-bottom: 200px;
 }
-/* slider */
+/*** slider ***/
 .slider--structure {
   margin-top: 75px;
   height: 250px;
+  box-sizing: border-box;
 }
 .slider--skin {
-  box-sizing: border-box;
   font-weight: bold;
-  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $slider;*/
-  background: $slider, no-repeat center center fixed;
 
+  background-image: $slider;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $slider;
+  cool hack za potamnit sliku (malo se lose vidi text) al iz nekog razloga poveca dist
+   size za 700kB :/ - pogledaj posli*/
   padding-top: 105px;
   font-size: 50px;
   color: #ffffff;
@@ -157,14 +157,12 @@ body {
   text-align: center;
 }
 
-/*slider indicator*/
-
 @media screen and (max-width: 640px) {
   .slider--structure {
     height: 400px;
   }
 }
-/* main */
+/*** main ***/
 .center {
   max-width: 1024px;
   margin: 0 auto;
@@ -176,7 +174,6 @@ body {
   justify-content: space-evenly;
 }
 .article-container {
-  /*ovo treba rastavit posli*/
   max-width: 360px;
   margin: 2% auto;
   max-height: 800px;
@@ -199,11 +196,11 @@ body {
 @media screen and (max-width: 330px) {
   /* ultra-slim */
   .article-container {
-    margin: 100px auto;
+    margin: 80px auto;
   }
 }
 .article__image {
-  min-height: 230px;
+  min-height: 200px;
   background-size: cover;
   background-image: $article;
 }
@@ -238,9 +235,9 @@ body {
     text-decoration: underline;
   }
 }
+/*** load more button ***/
 .button-container {
   height: 160px;
-  color: gray;
   display: flex;
 }
 .button--structure {
@@ -272,10 +269,9 @@ body {
   }
 }
 
-/* form */
+/*** form ***/
 .form-container--structure {
   display: flex;
-
   max-width: 1024px;
   margin: 0 auto;
   height: 922px;
@@ -306,34 +302,40 @@ body {
   padding: 0 27px;
   border: 0;
 }
-.forma__input:hover {
+.forma__input:hover,
+.forma__input:focus {
+  outline: none; // https://stackoverflow.com/questions/2943548/how-to-reset-remove-chromes-input-highlighting-focus-border
   cursor: pointer;
   border: 1px solid #289fd0;
 }
 .forma__message {
   height: 200px;
 }
-.forma__button {
+.forma__button--skin {
   border: 0;
   border-radius: 4px;
-  width: 518px;
-  height: 80px;
   text-align: center;
   background-color: #289fd0;
   color: white;
   font-weight: 600;
   padding: 0;
 }
-
+.forma__button--structure {
+  box-sizing: border-box;
+  width: 490px+27px+27px;
+  height: 80px;
+}
 @media screen and (max-width: 640px) {
   .forma__input,
   .forma__message,
-  .forma__button {
+  .forma__button--structure {
     padding-left: 0;
+    padding-right: 0;
     width: 90%;
     margin: 0 auto;
   }
 }
+
 /* footer*/
 
 .footer--structure {
