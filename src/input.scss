@@ -89,7 +89,18 @@ body {
   background-color: #2288b2;
 }
 @media screen and (max-width: 768px) {
-  .header__navigation--skin {
+  .header__navigation__dropdown-content {
+    position: static;
+    width: 100%;
+  }
+  .header__navigation__dropdown-content a {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header__navigation--structure {
     display: none;
   }
   .icon {
@@ -109,9 +120,14 @@ body {
   flex-flow: column;
   text-align: center;
 }
+@media screen and (max-width: 640px) {
+  .tablet-sidebar {
+    width: 100%;
+  }
+}
 .sidebar-fix {
   width: 100%;
-  margin-bottom: 250px;
+  margin-bottom: 200px;
 }
 /* slider */
 .slider--structure {
@@ -119,9 +135,18 @@ body {
   height: 250px;
 }
 .slider--skin {
+  box-sizing: border-box;
+  font-weight: bold;
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $slider;*/
   background-image: $slider;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 105px;
+  font-size: 50px;
+  color: #ffffff;
+  letter-spacing: 0px;
+  line-height: 36px;
+  text-align: center;
 }
 @media screen and (max-width: 640px) {
   .slider--structure {
