@@ -13,6 +13,9 @@ body {
 .show {
   display: block !important;
 }
+.unclickable {
+  pointer-events: none;
+}
 /* header */
 .header--structure {
   height: 75px;
@@ -98,6 +101,11 @@ body {
     text-align: center;
     padding: 0;
   }
+  .header__navigation--skin:hover,
+  .header__navigation__dropdown-content a:hover {
+    background-color: #363636;
+    color: #2796c3;
+  }
 }
 @media screen and (max-width: 768px) {
   .header__navigation--structure {
@@ -138,8 +146,8 @@ body {
   box-sizing: border-box;
   font-weight: bold;
   /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $slider;*/
-  background-image: $slider;
-  background-repeat: no-repeat;
+  background: $slider, no-repeat center center fixed;
+
   background-size: cover;
   padding-top: 105px;
   font-size: 50px;
@@ -148,6 +156,9 @@ body {
   line-height: 36px;
   text-align: center;
 }
+
+/*slider indicator*/
+
 @media screen and (max-width: 640px) {
   .slider--structure {
     height: 400px;
@@ -292,7 +303,7 @@ body {
   border-radius: 4px;
   width: 490px;
   height: 80px;
-  padding-left: 27px;
+  padding: 0 27px;
   border: 0;
 }
 .forma__input:hover {

@@ -27,6 +27,7 @@ const createArticle = () => {
   let article__link = document.createElement("div");
   article__link.classList.add("article__link");
   let link = document.createElement("a");
+
   link.innerHTML = "View full article";
   link.setAttribute(
     "href",
@@ -60,7 +61,8 @@ icon.onclick = function() {
   )[0];
 
   lista.classList.toggle("show");
-
+  const unclickable = document.getElementById("dropdown");
+  unclickable.classList.toggle("unclickable");
   const body = document.getElementsByTagName("BODY")[0];
   body.classList.toggle("fixed");
 };
