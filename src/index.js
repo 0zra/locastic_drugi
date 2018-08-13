@@ -1,4 +1,5 @@
 import createArticle from "./article";
+import handleSubmit from "./formSubmit";
 import "./main.css";
 
 const loadArticles = () => {
@@ -83,3 +84,4 @@ function carousel() {
   x[slideIndex - 1].style.display = "block";
   setTimeout(carousel, 5000);
 }
+handleSubmit();
