@@ -1,14 +1,15 @@
+let form = document.getElementById("submit");
 const handleSubmit = () => {
-  let form = document.getElementById("submit");
-
   form.addEventListener("submit", function(event) {
     event.preventDefault();
     if (validateForm()) {
-      alert("dobra je forma");
+      sendData();
     }
   });
 };
 export default handleSubmit;
+
+/*form validation*/
 
 const validateForm = () => {
   removeMessages();
@@ -55,4 +56,23 @@ const removeMessages = () => {
     let input = document.getElementsByClassName("alert-input")[0];
     input.classList.remove("alert-input");
   }
+};
+
+/* form submition*/
+const sendData = () => {
+  let XHR = new XMLHttpRequest();
+  let FD = new FormData(form);
+
+  XHR.addEventListener("load", function(event) {
+    alert("Response: \n" + event.target.responseText);
+    location.reload();
+  });
+
+  XHR.addEventListener("error", function(event) {
+    alert("Failed");
+  });
+
+  XHR.open("POST", "www.slicestic.com/api/v1/fe-dev");
+
+  XHR.send(FD);
 };
