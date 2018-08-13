@@ -362,6 +362,27 @@ template {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+.triangle {
+  width: 0px;
+  height: 0px;
+  border: solid 20px;
+  border-color: transparent transparent #be4b49 transparent;
+  position: relative;
+  left: 25px;
+}
+
+.alert-message {
+  background-color: #be4b49;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.alert-input {
+  border: 1px solid red;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
