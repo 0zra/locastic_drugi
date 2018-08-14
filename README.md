@@ -1,6 +1,6 @@
 # 2. zadatak
 
-##Known bugs:
+## Known bugs:
 
 - Work button functionality after resizing
 - Form validation message location on small mobile screens
