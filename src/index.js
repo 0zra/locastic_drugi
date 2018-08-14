@@ -20,7 +20,9 @@ button.onclick = () => {
   loadArticles();
 };
 
-/*nav bar icon transformation*/
+/*
+nav bar icon transformation
+*/
 const icon = document.getElementById("icon");
 
 icon.onclick = function() {
@@ -41,7 +43,9 @@ icon.onclick = function() {
   body.classList.toggle("fixed"); //fixate the screen to the top of the page
 };
 
-/* dropdown functionality*/
+/*
+ dropdown functionality
+ */
 const works = document.getElementById("dropdown");
 works.onclick = () => {
   let lista = document.getElementsByClassName(

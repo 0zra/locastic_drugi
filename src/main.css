@@ -718,6 +718,7 @@ body {
   color: white;
   font-weight: 600;
   padding: 0;
+  cursor: pointer;
 }
 
 .forma__button--structure {
@@ -772,15 +773,27 @@ body {
 }
 
 .alert-message {
+  width: 490px;
   background-color: #be4b49;
   color: white;
   font-size: 16px;
   border-radius: 5px;
-  padding-left: 15px;
+  padding: 0 27px 0 27px;
 }
 
 .alert-input {
   border: 1px solid red;
+}
+
+@media screen and (max-width: 640px) {
+  .alert-message {
+    padding-left: 0;
+    padding-right: 0;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    left: -25px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
